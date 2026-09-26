@@ -1,0 +1,623 @@
+{
+  "users": {
+    "student@campus360.demo": {
+      "id": "usr-student-01",
+      "email": "student@campus360.demo",
+      "name": "Manoj Kumar Jena",
+      "role": "Student",
+      "title": "B.Tech Student (3rd Sem)",
+      "department": "Computer Science & Engineering",
+      "avatarUrl": "/src/assets/images/manoj_student_1790405327601.jpg",
+      "status": "active",
+      "phone": "+91 98765 43210",
+      "password": "student123",
+      "details": {
+        "rollNumber": "2024CS1042",
+        "section": "Section A",
+        "hostelAssigned": "Aryabhata Bhavan (Block B)"
+      }
+    },
+    "student@campus360.edu": {
+      "id": "usr-student-01",
+      "email": "student@campus360.edu",
+      "name": "Manoj Kumar Jena",
+      "role": "Student",
+      "title": "B.Tech Student (3rd Sem)",
+      "department": "Computer Science & Engineering",
+      "avatarUrl": "/src/assets/images/manoj_student_1790405327601.jpg",
+      "status": "active",
+      "phone": "+91 98765 43210",
+      "password": "password123",
+      "details": {
+        "rollNumber": "2024CS1042",
+        "section": "Section A",
+        "hostelAssigned": "Aryabhata Bhavan (Block B)"
+      }
+    },
+    "jena06459@gmail.com": {
+      "id": "usr-student-01",
+      "email": "jena06459@gmail.com",
+      "name": "Manoj Kumar Jena",
+      "role": "Student",
+      "title": "B.Tech Student (3rd Sem)",
+      "department": "Computer Science & Engineering",
+      "avatarUrl": "/src/assets/images/manoj_student_1790405327601.jpg",
+      "status": "active",
+      "phone": "+91 98765 43210",
+      "password": "student123",
+      "details": {
+        "rollNumber": "2024CS1042",
+        "section": "Section A",
+        "hostelAssigned": "Aryabhata Bhavan (Block B)"
+      }
+    },
+    "faculty@campus360.demo": {
+      "id": "usr-faculty-01",
+      "email": "faculty@campus360.demo",
+      "name": "Dr. A. Singh",
+      "role": "Faculty",
+      "title": "Associate Professor & HOD",
+      "department": "Computer Science & Engineering",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=250",
+      "status": "active",
+      "phone": "+91 98111 22334",
+      "password": "faculty123",
+      "details": {
+        "designation": "Associate Professor & HOD",
+        "section": "CS201, CS203"
+      }
+    },
+    "faculty@campus360.edu": {
+      "id": "usr-faculty-01",
+      "email": "faculty@campus360.edu",
+      "name": "Dr. A. Singh",
+      "role": "Faculty",
+      "title": "Associate Professor & HOD",
+      "department": "Computer Science & Engineering",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=250",
+      "status": "active",
+      "phone": "+91 98111 22334",
+      "password": "password123",
+      "details": {
+        "designation": "Associate Professor & HOD",
+        "section": "CS201, CS203"
+      }
+    },
+    "admin@campus360.demo": {
+      "id": "usr-admin-01",
+      "email": "admin@campus360.demo",
+      "name": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "title": "Dean of Academic Operations & System Admin",
+      "department": "Central Administration Office",
+      "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=250",
+      "status": "active",
+      "phone": "+91 98222 33445",
+      "password": "admin123",
+      "details": {
+        "designation": "Dean of Academic Operations"
+      }
+    },
+    "admin@campus360.edu": {
+      "id": "usr-admin-01",
+      "email": "admin@campus360.edu",
+      "name": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "title": "Dean of Academic Operations & System Admin",
+      "department": "Central Administration Office",
+      "avatarUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=250",
+      "status": "active",
+      "phone": "+91 98222 33445",
+      "password": "password123",
+      "details": {
+        "designation": "Dean of Academic Operations"
+      }
+    },
+    "warden@campus360.demo": {
+      "id": "usr-warden-01",
+      "email": "warden@campus360.demo",
+      "name": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "title": "Chief Hostel Warden",
+      "department": "Hostel Administration Council",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=250",
+      "status": "active",
+      "phone": "+91 98333 44556",
+      "password": "warden123",
+      "details": {
+        "hostelAssigned": "Aryabhata & Ramanujan Hostels"
+      }
+    },
+    "warden@campus360.edu": {
+      "id": "usr-warden-01",
+      "email": "warden@campus360.edu",
+      "name": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "title": "Chief Hostel Warden",
+      "department": "Hostel Administration Council",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=250",
+      "status": "active",
+      "phone": "+91 98333 44556",
+      "password": "password123",
+      "details": {
+        "hostelAssigned": "Aryabhata & Ramanujan Hostels"
+      }
+    },
+    "staff@campus360.demo": {
+      "id": "usr-staff-01",
+      "email": "staff@campus360.demo",
+      "name": "Rajesh Verma",
+      "role": "Staff",
+      "title": "Facilities & Maintenance Supervisor",
+      "department": "Campus Estate & Engineering Dept",
+      "avatarUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=250",
+      "status": "active",
+      "phone": "+91 98444 55667",
+      "password": "staff123",
+      "details": {
+        "assignedDepartment": "Civil & Electrical Maintenance"
+      }
+    },
+    "staff@campus360.edu": {
+      "id": "usr-staff-01",
+      "email": "staff@campus360.edu",
+      "name": "Rajesh Verma",
+      "role": "Staff",
+      "title": "Facilities & Maintenance Supervisor",
+      "department": "Campus Estate & Engineering Dept",
+      "avatarUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=250",
+      "status": "active",
+      "phone": "+91 98444 55667",
+      "password": "password123",
+      "details": {
+        "assignedDepartment": "Civil & Electrical Maintenance"
+      }
+    },
+    "disabled@campus360.edu": {
+      "id": "usr-disabled-01",
+      "email": "disabled@campus360.edu",
+      "name": "Priya Nambiar",
+      "role": "Student",
+      "title": "Suspended Account",
+      "department": "Electronics Engineering",
+      "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=250",
+      "status": "disabled",
+      "phone": "+91 98999 00112",
+      "password": "password123"
+    }
+  },
+  "complaints": [
+    {
+      "id": "CMP-1003",
+      "title": "Hostel bathroom tap is leaking continuously",
+      "category": "Plumbing",
+      "description": "Floor is flooded with water from cracked pipeline",
+      "location": "2nd Floor Washroom",
+      "hostel": "Aryabhata Bhavan (Block B)",
+      "room": "Room 101",
+      "priority": "High",
+      "status": "Submitted",
+      "studentName": "Manoj Kumar Jena",
+      "studentEmail": "student@campus360.demo",
+      "studentRoll": "2024CS1042",
+      "createdAt": "9/26/2026, 6:37:53 AM",
+      "aiRouting": {
+        "category": "Plumbing",
+        "department": "Estate Maintenance",
+        "priority": "High",
+        "assignedTeam": "Plumbing & Water Supply Team (Rajesh Verma)"
+      },
+      "history": [
+        {
+          "date": "9/26/2026, 6:37:53 AM",
+          "action": "Complaint registered via Campus 360",
+          "actor": "Manoj Kumar Jena (Student)"
+        },
+        {
+          "date": "9/26/2026, 6:37:53 AM",
+          "action": "AI Triage: Auto-routed to Plumbing & Water Supply Team (Rajesh Verma)",
+          "actor": "Campus 360 AI Engine"
+        }
+      ]
+    },
+    {
+      "id": "CMP-1024",
+      "title": "Water tap leaking continuously in washroom",
+      "category": "Plumbing",
+      "description": "The basin mixer tap in 2nd floor common washroom has a cracked washer and is leaking water non-stop, creating a slippery floor.",
+      "hostel": "Aryabhata Bhavan (Block B)",
+      "room": "Washroom 204",
+      "location": "2nd Floor West Wing",
+      "priority": "High",
+      "status": "In Progress",
+      "studentName": "Manoj Kumar Jena",
+      "studentEmail": "student@campus360.edu",
+      "studentRoll": "2024CS1042",
+      "createdAt": "2026-09-24 09:30 AM",
+      "assignedStaff": "Rajesh Verma",
+      "assignedStaffRole": "Senior Plumbing Technician",
+      "staffNotes": "Replaced internal valve washer; testing water pressure under main riser.",
+      "aiRouting": {
+        "category": "Plumbing",
+        "department": "Estate Maintenance",
+        "priority": "High",
+        "assignedTeam": "Plumbing Team (Rajesh Verma)"
+      },
+      "history": [
+        {
+          "date": "2026-09-24 09:30 AM",
+          "action": "Submitted by student via Campus 360",
+          "actor": "Manoj Kumar Jena (Student)"
+        },
+        {
+          "date": "2026-09-24 09:35 AM",
+          "action": "AI triage classified as High Priority Plumbing",
+          "actor": "Campus 360 AI Engine"
+        },
+        {
+          "date": "2026-09-24 10:15 AM",
+          "action": "Work order accepted by maintenance staff",
+          "actor": "Rajesh Verma (Staff)"
+        },
+        {
+          "date": "2026-09-24 11:30 AM",
+          "action": "Status moved to In Progress",
+          "actor": "Rajesh Verma (Staff)"
+        }
+      ]
+    },
+    {
+      "id": "CMP-1023",
+      "title": "Ceiling fan making squeaking noise & oscillating erratically",
+      "category": "Electricity",
+      "description": "Room 312 fan regulator causes humming and the ceiling mounting bracket seems loose.",
+      "hostel": "Aryabhata Bhavan (Block B)",
+      "room": "Room 312",
+      "location": "3rd Floor East Wing",
+      "priority": "Medium",
+      "status": "Submitted",
+      "studentName": "Manoj Kumar Jena",
+      "studentEmail": "student@campus360.edu",
+      "studentRoll": "2024CS1042",
+      "createdAt": "2026-09-24 02:15 PM",
+      "aiRouting": {
+        "category": "Electricity",
+        "department": "Electrical Engineering Division",
+        "priority": "Medium",
+        "assignedTeam": "Electrical Works Crew (K. Somesh)"
+      },
+      "history": [
+        {
+          "date": "2026-09-24 02:15 PM",
+          "action": "Submitted by student via Campus 360",
+          "actor": "Manoj Kumar Jena (Student)"
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "REQ-402",
+      "type": "Bonafide Certificate",
+      "purpose": "Education Loan Application & Bank Verification (SBI Scholar Scheme)",
+      "status": "Approved",
+      "submittedDate": "2026-09-22",
+      "approvedDate": "2026-09-23",
+      "studentName": "Manoj Kumar Jena",
+      "studentRoll": "2024CS1042",
+      "department": "Computer Science & Engineering",
+      "verificationCode": "BC-2026-88912"
+    },
+    {
+      "id": "REQ-403",
+      "type": "Hostel Certificate",
+      "purpose": "Residential proof for Passport renewal appointment at Regional Passport Office",
+      "status": "Pending",
+      "submittedDate": "2026-09-25",
+      "studentName": "Manoj Kumar Jena",
+      "studentRoll": "2024CS1042",
+      "department": "Computer Science & Engineering"
+    }
+  ],
+  "gatePasses": [
+    {
+      "id": "GP-8841",
+      "studentName": "Manoj Kumar Jena",
+      "studentRoll": "2024CS1042",
+      "destination": "Central City Library & Book Depot",
+      "reason": "Reference material study for Advanced Algorithms semester project",
+      "departureTime": "2026-09-25 04:30 PM",
+      "returnTime": "2026-09-25 08:30 PM",
+      "parentContact": "+91 98765 11223",
+      "status": "Approved",
+      "approvedBy": "Er. Sandeep Rathore (Chief Warden)",
+      "approvedAt": "2026-09-25 02:15 PM",
+      "qrPayload": "CAMPUS360-GP-8841-2024CS1042-VERIFIED-VALID"
+    }
+  ],
+  "notices": [
+    {
+      "id": "NTC-501",
+      "title": "End-Semester Theory & Practical Examination Schedule (Autumn 2026)",
+      "category": "Examination",
+      "priority": "Important",
+      "publishDate": "2026-09-24",
+      "postedBy": "Dean of Academic Operations",
+      "description": "The final timetable for CSE, ECE, ME and CE semester exams has been uploaded to the academic portal. Hall tickets available from Oct 1st.",
+      "targetAudience": "All Students",
+      "isRead": false,
+      "requiresAction": false
+    },
+    {
+      "id": "NTC-502",
+      "title": "Heavy Rainfall Advisory & Campus Transit Shuttles",
+      "category": "Emergency",
+      "priority": "Emergency",
+      "publishDate": "2026-09-25",
+      "postedBy": "Chief Proctor Office",
+      "description": "Due to severe waterlogging warnings in metro outskirts, evening buses will depart 45 mins earlier from the Administrative block.",
+      "targetAudience": "All",
+      "isRead": false,
+      "requiresAction": true,
+      "actionText": "Confirm Safe Commute Plan",
+      "isActionDone": false
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "type": "gatepass",
+      "title": "Gate Pass Approved",
+      "message": "Your gate pass GP-8841 has been approved by Chief Warden Er. Sandeep Rathore. QR pass active.",
+      "time": "15 mins ago",
+      "isRead": false,
+      "targetRole": "Student",
+      "actionTab": "Gate Pass",
+      "relatedId": "GP-8841"
+    },
+    {
+      "id": "notif-2",
+      "type": "complaint",
+      "title": "Maintenance Status Update",
+      "message": "Technician Rajesh Verma updated ticket CMP-1024 to In Progress (Parts replaced).",
+      "time": "1 hour ago",
+      "isRead": false,
+      "targetRole": "Student",
+      "actionTab": "Complaints",
+      "relatedId": "CMP-1024"
+    }
+  ],
+  "attendance": [
+    {
+      "courseCode": "CS201",
+      "courseName": "Data Structures & Algorithms",
+      "faculty": "Dr. A. Singh",
+      "conducted": 32,
+      "attended": 28,
+      "percentage": 87.5
+    },
+    {
+      "courseCode": "CS202",
+      "courseName": "Discrete Mathematics",
+      "faculty": "Prof. M. K. Rao",
+      "conducted": 28,
+      "attended": 24,
+      "percentage": 85.7
+    },
+    {
+      "courseCode": "CS203",
+      "courseName": "Computer Organization & Arch",
+      "faculty": "Dr. Neha Verma",
+      "conducted": 30,
+      "attended": 22,
+      "percentage": 73.3
+    },
+    {
+      "courseCode": "CS204",
+      "courseName": "Object Oriented Programming",
+      "faculty": "Prof. S. Sengupta",
+      "conducted": 26,
+      "attended": 24,
+      "percentage": 92.3
+    },
+    {
+      "courseCode": "CS205",
+      "courseName": "Database Management Systems",
+      "faculty": "Dr. R. Ramanujan",
+      "conducted": 25,
+      "attended": 21,
+      "percentage": 84
+    },
+    {
+      "courseCode": "CS201P",
+      "courseName": "DSA Practical Lab",
+      "faculty": "Dr. A. Singh",
+      "conducted": 14,
+      "attended": 13,
+      "percentage": 92.8
+    }
+  ],
+  "messFeedback": [
+    {
+      "id": "mf-1",
+      "date": "2026-09-24",
+      "mealType": "Lunch",
+      "rating": 4,
+      "comment": "Paneer butter masala and fresh chapati were good quality.",
+      "studentName": "Manoj Kumar Jena"
+    },
+    {
+      "id": "mf-2",
+      "date": "2026-09-23",
+      "mealType": "Dinner",
+      "rating": 3,
+      "comment": "Dal tadka lacked salt, rice was well prepared.",
+      "studentName": "Aarav Mehta"
+    }
+  ],
+  "feeDetails": {
+    "totalFee": 148500,
+    "paidFee": 110000,
+    "pendingFee": 38500,
+    "dueDate": "2026-10-15",
+    "semester": "Autumn 2026 (Semester 3)",
+    "breakdown": [
+      {
+        "category": "Tuition Fee",
+        "amount": 85000,
+        "paid": 85000,
+        "status": "Paid"
+      },
+      {
+        "category": "Hostel Accommodation (Double Sharing)",
+        "amount": 35000,
+        "paid": 25000,
+        "status": "Partial"
+      },
+      {
+        "category": "Mess & Dining Charges",
+        "amount": 22000,
+        "paid": 0,
+        "status": "Pending"
+      },
+      {
+        "category": "Laboratory & Examination Fund",
+        "amount": 6500,
+        "paid": 0,
+        "status": "Pending"
+      }
+    ],
+    "paymentHistory": [
+      {
+        "id": "TXN-9901",
+        "date": "2026-07-28",
+        "amount": 85000,
+        "method": "Online NetBanking (HDFC)",
+        "receiptNumber": "RCP-2026-10492",
+        "status": "Success"
+      },
+      {
+        "id": "TXN-9902",
+        "date": "2026-08-04",
+        "amount": 25000,
+        "method": "UPI (GPay)",
+        "receiptNumber": "RCP-2026-11844",
+        "status": "Success"
+      }
+    ]
+  },
+  "auditLogs": [
+    {
+      "id": "aud-1790446069936-362",
+      "timestamp": "9/26/2026, 6:07:49 PM",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790408852792-551",
+      "timestamp": "9/26/2026, 7:47:32 AM",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790408844520-955",
+      "timestamp": "9/26/2026, 7:47:24 AM",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790405495539-291",
+      "timestamp": "9/26/2026, 6:51:35 AM",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790405053061-492",
+      "timestamp": "9/26/2026, 6:44:13 AM",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790404838203-860",
+      "timestamp": "9/26/2026, 6:40:38 AM",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790404673926-381",
+      "timestamp": "9/26/2026, 6:37:53 AM",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "Complaint Created",
+      "details": "Registered ticket CMP-1003: Hostel bathroom tap is leaking continuously (Plumbing)"
+    },
+    {
+      "id": "aud-1790404662187-671",
+      "timestamp": "9/26/2026, 6:37:42 AM",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1",
+      "timestamp": "2026-09-25 02:15 PM",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "Approved Gate Pass",
+      "details": "Cleared Gate Pass GP-8841 for Manoj Kumar Jena (2024CS1042)"
+    },
+    {
+      "id": "aud-2",
+      "timestamp": "2026-09-24 11:30 AM",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "Updated Complaint",
+      "details": "Status moved to In Progress for CMP-1024 with notes"
+    },
+    {
+      "id": "aud-3",
+      "timestamp": "2026-09-23 04:00 PM",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "Approved Certificate",
+      "details": "Generated Bonafide Certificate REQ-402 for Manoj Kumar Jena"
+    }
+  ],
+  "hostels": [
+    {
+      "name": "Aryabhata Bhavan (Block B)",
+      "totalRooms": 120,
+      "occupiedRooms": 112,
+      "vacantRooms": 8,
+      "residentStudents": 224
+    },
+    {
+      "name": "Ramanujan Bhavan (Block A)",
+      "totalRooms": 100,
+      "occupiedRooms": 96,
+      "vacantRooms": 4,
+      "residentStudents": 192
+    },
+    {
+      "name": "Kalpana Chawla Bhavan (Girls)",
+      "totalRooms": 150,
+      "occupiedRooms": 145,
+      "vacantRooms": 5,
+      "residentStudents": 290
+    }
+  ],
+  "cancelledClasses": []
+}

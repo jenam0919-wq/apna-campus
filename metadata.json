@@ -1,0 +1,6 @@
+{
+  "name": "Campus 360",
+  "description": "Campus 360 — One Campus. Everything Connected. Unified digital campus operations platform connecting Students, Faculty, Administration, Wardens, and Staff across all campus operations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
