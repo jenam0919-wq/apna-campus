@@ -922,6 +922,62 @@
   },
   "auditLogs": [
     {
+      "id": "aud-1791656755082-800",
+      "timestamp": "10/10/2026, 11:55:55 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1791656716175-740",
+      "timestamp": "10/10/2026, 11:55:16 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1791656645205-197",
+      "timestamp": "10/10/2026, 11:54:05 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1791656637335-430",
+      "timestamp": "10/10/2026, 11:53:57 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1791656621602-48",
+      "timestamp": "10/10/2026, 11:53:41 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "AI Chat Request",
+      "details": "Asked: \"hii...\""
+    },
+    {
+      "id": "aud-1791656549378-674",
+      "timestamp": "10/10/2026, 11:52:29 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1791656542133-508",
+      "timestamp": "10/10/2026, 11:52:22 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
       "id": "aud-1791654132037-632",
       "timestamp": "10/10/2026, 11:12:12 pm",
       "actor": "Manoj Kumar Jena",
