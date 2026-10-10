@@ -1302,7 +1302,11 @@ async function bootstrap() {
   });
 }
 
-bootstrap().catch((err) => {
-  console.error('Fatal error starting Campus 360 server:', err);
-  process.exit(1);
-});
+if (!process.env.VERCEL) {
+  bootstrap().catch((err) => {
+    console.error('Fatal error starting Campus 360 server:', err);
+    process.exit(1);
+  });
+}
+
+export default app;
