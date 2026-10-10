@@ -22,16 +22,24 @@ export function getFirebaseAdmin() {
     if (getApps().length > 0) {
       adminApp = getApps()[0];
     } else {
-      const saPath = process.env.FIREBASE_SERVICE_ACCOUNT_PATH 
-        ? path.resolve(__dirname, process.env.FIREBASE_SERVICE_ACCOUNT_PATH)
-        : path.resolve(__dirname, 'firebase-service-account.json');
+      let serviceAccount;
+      
+      // Try from JSON string env variable (for Vercel)
+      if (process.env.FIREBASE_SERVICE_ACCOUNT_JSON) {
+        serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
+      } else {
+        // Fallback to local file
+        const saPath = process.env.FIREBASE_SERVICE_ACCOUNT_PATH 
+          ? path.resolve(__dirname, process.env.FIREBASE_SERVICE_ACCOUNT_PATH)
+          : path.resolve(__dirname, 'firebase-service-account.json');
 
-      if (!fs.existsSync(saPath)) {
-        console.warn(`[Firebase Admin] Service account file not found at ${saPath}`);
-        return { app: null, auth: null, db: null, available: false };
+        if (!fs.existsSync(saPath)) {
+          console.warn(`[Firebase Admin] Service account file not found at ${saPath}`);
+          return { app: null, auth: null, db: null, available: false };
+        }
+        serviceAccount = JSON.parse(fs.readFileSync(saPath, 'utf8'));
       }
 
-      const serviceAccount = JSON.parse(fs.readFileSync(saPath, 'utf8'));
       adminApp = initializeApp({
         credential: cert(serviceAccount),
         projectId: serviceAccount.project_id || 'apna-campus-db438',
