@@ -1078,7 +1078,10 @@ export const CampusDataProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
     addAuditLog(data.studentName, 'Student', 'Applied Gate Pass', `${newId} destination: ${data.destination}`);
     setFirestoreDocument('gate_passes', newId, newPass).catch(() => {});
-    CampusAPI.applyGatePass(newPass).catch(() => {});
+    CampusAPI.applyGatePass({
+      ...newPass,
+      returnTime: data.expectedReturnTime,
+    }).catch(() => {});
     return newId;
   };
 
@@ -1316,7 +1319,7 @@ export const CampusDataProvider: React.FC<{ children: React.ReactNode }> = ({ ch
             date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
             amount,
             method,
-            status: 'Success',
+            status: 'Success' as const,
             receiptNo,
           },
           ...prev.transactions,

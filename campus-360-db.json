@@ -188,6 +188,52 @@
   },
   "complaints": [
     {
+      "id": "CMP-1004",
+      "title": "netwok ",
+      "category": "Wi-Fi",
+      "description": "dewfkvkjerbvirvgr",
+      "location": "3rd Floor West Corridor",
+      "hostel": "Aryabhata Bhavan (Block B)",
+      "room": "Room 312",
+      "priority": "High",
+      "status": "Resolved",
+      "studentName": "Manoj Kumar Jena",
+      "studentEmail": "student@campus360.demo",
+      "studentRoll": "2024CS1042",
+      "createdAt": "28/9/2026, 4:54:23 pm",
+      "aiRouting": {
+        "category": "Other",
+        "department": "General Operations",
+        "priority": "Medium",
+        "assignedTeam": "Central Facilities Desk"
+      },
+      "history": [
+        {
+          "date": "28/9/2026, 4:54:23 pm",
+          "action": "Complaint registered via Campus 360",
+          "actor": "Manoj Kumar Jena (Student)"
+        },
+        {
+          "date": "28/9/2026, 4:54:23 pm",
+          "action": "AI Triage: Auto-routed to Central Facilities Desk",
+          "actor": "Campus 360 AI Engine"
+        },
+        {
+          "date": "28/9/2026, 4:55:55 pm",
+          "action": "Technician began on-site diagnostics at Aryabhata Bhavan (Block B) Room 312. ETA: Today, 04:30 PM",
+          "actor": "Rajesh Verma (Staff)"
+        },
+        {
+          "date": "28/9/2026, 4:56:31 pm",
+          "action": "Resolution Verified: Work order completed and tested in presence of floor representative.",
+          "actor": "Rajesh Verma (Staff)"
+        }
+      ],
+      "staffNotes": "Resolution Verified: Work order completed and tested in presence of floor representative.",
+      "assignedStaff": "Rajesh Verma",
+      "assignedStaffRole": "Facilities & Maintenance Supervisor"
+    },
+    {
       "id": "CMP-1003",
       "title": "Hostel bathroom tap is leaking continuously",
       "category": "Plumbing",
@@ -196,7 +242,7 @@
       "hostel": "Aryabhata Bhavan (Block B)",
       "room": "Room 101",
       "priority": "High",
-      "status": "Submitted",
+      "status": "In Progress",
       "studentName": "Manoj Kumar Jena",
       "studentEmail": "student@campus360.demo",
       "studentRoll": "2024CS1042",
@@ -217,8 +263,16 @@
           "date": "9/26/2026, 6:37:53 AM",
           "action": "AI Triage: Auto-routed to Plumbing & Water Supply Team (Rajesh Verma)",
           "actor": "Campus 360 AI Engine"
+        },
+        {
+          "date": "27/9/2026, 3:24:25 pm",
+          "action": "Technician began on-site diagnostics at Aryabhata Bhavan (Block B) Room 101. ETA: Today, 04:30 PM",
+          "actor": "Rajesh Verma (Staff)"
         }
-      ]
+      ],
+      "staffNotes": "Technician began on-site diagnostics at Aryabhata Bhavan (Block B) Room 101. ETA: Today, 04:30 PM",
+      "assignedStaff": "Rajesh Verma",
+      "assignedStaffRole": "Facilities & Maintenance Supervisor"
     },
     {
       "id": "CMP-1024",
@@ -321,6 +375,79 @@
   ],
   "gatePasses": [
     {
+      "id": "GP-8846",
+      "studentName": "Manoj Kumar Jena",
+      "studentRoll": "2024CS1042",
+      "destination": "chandaka ",
+      "reason": "marketing\n",
+      "departureTime": "2026-09-23 17:00",
+      "expectedReturnTime": "2026-09-23 21:00",
+      "returnTime": "2026-09-23 21:00",
+      "parentContact": "+91 98765 43210",
+      "status": "Approved",
+      "qrPayload": "CAMPUS360-GP-8846-2024CS1042-VERIFIED-VALID",
+      "approvedBy": "Er. Sandeep Rathore (Warden)",
+      "approvedAt": "28/9/2026, 4:50:42 pm"
+    },
+    {
+      "id": "GP-8845",
+      "studentName": "Manoj Kumar Jena",
+      "studentRoll": "2024CS1042",
+      "destination": "bbbsr",
+      "reason": "maketinng ",
+      "departureTime": "2026-09-23 17:00",
+      "expectedReturnTime": "2026-09-23 21:00",
+      "returnTime": "2026-09-23 21:00",
+      "parentContact": "+91 98765 43210",
+      "status": "Approved",
+      "qrPayload": "CAMPUS360-GP-8845-2024CS1042-VERIFIED-VALID",
+      "approvedBy": "Er. Sandeep Rathore (Warden)",
+      "approvedAt": "27/9/2026, 6:16:09 pm"
+    },
+    {
+      "id": "GP-8844",
+      "studentName": "Manoj Kumar Jena",
+      "studentRoll": "2024CS1042",
+      "destination": "QA Gate Pass Persistence Check",
+      "reason": "End-to-end audit verification",
+      "departureTime": "2026-09-27 17:00",
+      "expectedReturnTime": "2026-09-27 21:00",
+      "returnTime": "2026-09-27 21:00",
+      "parentContact": "+91 98765 43210",
+      "status": "Approved",
+      "qrPayload": "CAMPUS360-GP-8844-2024CS1042-VERIFIED-VALID",
+      "approvedBy": "Er. Sandeep Rathore (Warden)",
+      "approvedAt": "27/9/2026, 3:59:40 pm"
+    },
+    {
+      "id": "GP-8843",
+      "studentName": "Manoj Kumar Jena",
+      "studentRoll": "2024CS1042",
+      "destination": "bbsr",
+      "reason": "marketing",
+      "departureTime": "2026-09-23 17:00",
+      "expectedReturnTime": "2026-09-23 21:00",
+      "returnTime": "2026-09-23 21:00",
+      "parentContact": "+91 98765 43210",
+      "status": "Pending",
+      "qrPayload": "CAMPUS360-GP-8843-2024CS1042-PENDING"
+    },
+    {
+      "id": "GP-8842",
+      "studentName": "Manoj Kumar Jena",
+      "studentRoll": "2024CS1042",
+      "destination": "chandakaa",
+      "reason": "marketing",
+      "departureTime": "2026-09-23 17:00",
+      "expectedReturnTime": "2026-09-23 21:00",
+      "returnTime": "2026-09-23 21:00",
+      "parentContact": "+91 98765 43210",
+      "status": "Approved",
+      "qrPayload": "CAMPUS360-GP-8842-2024CS1042-VERIFIED-VALID",
+      "approvedBy": "Er. Sandeep Rathore (Warden)",
+      "approvedAt": "27/9/2026, 3:43:37 pm"
+    },
+    {
       "id": "GP-8841",
       "studentName": "Manoj Kumar Jena",
       "studentRoll": "2024CS1042",
@@ -330,12 +457,110 @@
       "returnTime": "2026-09-25 08:30 PM",
       "parentContact": "+91 98765 11223",
       "status": "Approved",
-      "approvedBy": "Er. Sandeep Rathore (Chief Warden)",
-      "approvedAt": "2026-09-25 02:15 PM",
+      "approvedBy": "Er. Sandeep Rathore (Warden)",
+      "approvedAt": "27/9/2026, 3:59:07 pm",
       "qrPayload": "CAMPUS360-GP-8841-2024CS1042-VERIFIED-VALID"
     }
   ],
   "notices": [
+    {
+      "id": "NTC-509",
+      "title": "ebghberger",
+      "category": "Emergency",
+      "priority": "Emergency",
+      "publishDate": "2026-09-28",
+      "postedBy": "Dr. A. Singh",
+      "description": "mhfi4rmhont4bh35t-rh tihgyvrearwf",
+      "targetAudience": "2nd Year",
+      "isRead": false,
+      "requiresAction": false,
+      "actionText": "Acknowledge Notice",
+      "isActionDone": false
+    },
+    {
+      "id": "NTC-508",
+      "title": "helllllllllllllllllll",
+      "category": "Academic",
+      "priority": "Important",
+      "publishDate": "2026-09-27",
+      "postedBy": "Dr. A. Singh",
+      "description": "helllllllllllllllllllllllllllllo",
+      "targetAudience": "CSE",
+      "isRead": true,
+      "requiresAction": false,
+      "actionText": "Acknowledge Notice",
+      "isActionDone": false
+    },
+    {
+      "id": "NTC-507",
+      "title": "QA Notice Warden",
+      "category": "Hostel",
+      "priority": "Regular",
+      "publishDate": "2026-09-27",
+      "postedBy": "Er. Sandeep Rathore",
+      "description": "Role notice permission test",
+      "targetAudience": "All Students",
+      "isRead": false,
+      "requiresAction": false,
+      "actionText": "Acknowledge Notice",
+      "isActionDone": false
+    },
+    {
+      "id": "NTC-506",
+      "title": "QA Notice Faculty",
+      "category": "Hostel",
+      "priority": "Regular",
+      "publishDate": "2026-09-27",
+      "postedBy": "Dr. A. Singh",
+      "description": "Role notice permission test",
+      "targetAudience": "All Students",
+      "isRead": false,
+      "requiresAction": false,
+      "actionText": "Acknowledge Notice",
+      "isActionDone": false
+    },
+    {
+      "id": "NTC-505",
+      "title": "QA Notice Admin",
+      "category": "Hostel",
+      "priority": "Regular",
+      "publishDate": "2026-09-27",
+      "postedBy": "Dr. K. Venkataraman",
+      "description": "Role notice permission test",
+      "targetAudience": "All Students",
+      "isRead": false,
+      "requiresAction": false,
+      "actionText": "Acknowledge Notice",
+      "isActionDone": false
+    },
+    {
+      "id": "NTC-504",
+      "title": "hello gyesss",
+      "category": "Emergency",
+      "priority": "Emergency",
+      "publishDate": "2026-09-27",
+      "postedBy": "Dr. A. Singh",
+      "description": "kya merre bat horahe he ",
+      "targetAudience": "CSE",
+      "isRead": false,
+      "requiresAction": false,
+      "actionText": "Acknowledge Notice",
+      "isActionDone": false
+    },
+    {
+      "id": "NTC-503",
+      "title": "Hostel Block B Emergency Inspection & Roll Call",
+      "category": "Emergency",
+      "priority": "Emergency",
+      "publishDate": "2026-09-26",
+      "postedBy": "Er. Sandeep Rathore",
+      "description": "Mandatory physical headcount at 09:30 PM in Common Room. All residents must be present.",
+      "targetAudience": "Hostel",
+      "isRead": false,
+      "requiresAction": false,
+      "actionText": "Acknowledge Notice",
+      "isActionDone": false
+    },
     {
       "id": "NTC-501",
       "title": "End-Semester Theory & Practical Examination Schedule (Autumn 2026)",
@@ -364,6 +589,171 @@
     }
   ],
   "notifications": [
+    {
+      "id": "notif-1790595073724",
+      "type": "notice",
+      "title": "New Notice: ebghberger",
+      "message": "Dr. A. Singh published a circular for 2nd Year",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "All",
+      "actionTab": "Notices",
+      "relatedId": "NTC-509"
+    },
+    {
+      "id": "notif-1790594791981",
+      "type": "complaint",
+      "title": "Ticket CMP-1004 Update: Resolved",
+      "message": "Resolution Verified: Work order completed and tested in presence of floor representative.",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "Student",
+      "actionTab": "Complaints",
+      "relatedId": "CMP-1004"
+    },
+    {
+      "id": "notif-1790594755592",
+      "type": "complaint",
+      "title": "Ticket CMP-1004 Update: In Progress",
+      "message": "Technician began on-site diagnostics at Aryabhata Bhavan (Block B) Room 312. ETA: Today, 04:30 PM",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "Student",
+      "actionTab": "Complaints",
+      "relatedId": "CMP-1004"
+    },
+    {
+      "id": "notif-1790594442015",
+      "type": "gatepass",
+      "title": "Gate Pass Approved",
+      "message": "Your gate pass GP-8846 to chandaka  has been approved by Er. Sandeep Rathore. Digital QR active.",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "Student",
+      "actionTab": "Gate Pass",
+      "relatedId": "GP-8846"
+    },
+    {
+      "id": "notif-1790518089078",
+      "type": "notice",
+      "title": "New Notice: helllllllllllllllllll",
+      "message": "Dr. A. Singh published a circular for CSE",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "All",
+      "actionTab": "Notices",
+      "relatedId": "NTC-508"
+    },
+    {
+      "id": "notif-1790517623966",
+      "type": "notice",
+      "title": "New Notice: QA Notice Warden",
+      "message": "Er. Sandeep Rathore published a circular for All Students",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "All",
+      "actionTab": "Notices",
+      "relatedId": "NTC-507"
+    },
+    {
+      "id": "notif-1790517623945",
+      "type": "notice",
+      "title": "New Notice: QA Notice Faculty",
+      "message": "Dr. A. Singh published a circular for All Students",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "All",
+      "actionTab": "Notices",
+      "relatedId": "NTC-506"
+    },
+    {
+      "id": "notif-1790517623922",
+      "type": "notice",
+      "title": "New Notice: QA Notice Admin",
+      "message": "Dr. K. Venkataraman published a circular for All Students",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "All",
+      "actionTab": "Notices",
+      "relatedId": "NTC-505"
+    },
+    {
+      "id": "notif-1790513169969",
+      "type": "gatepass",
+      "title": "Gate Pass Approved",
+      "message": "Your gate pass GP-8845 to bbbsr has been approved by Er. Sandeep Rathore. Digital QR active.",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "Student",
+      "actionTab": "Gate Pass",
+      "relatedId": "GP-8845"
+    },
+    {
+      "id": "notif-1790504980050",
+      "type": "gatepass",
+      "title": "Gate Pass Approved",
+      "message": "Your gate pass GP-8844 to QA Gate Pass Persistence Check has been approved by Er. Sandeep Rathore. Digital QR active.",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "Student",
+      "actionTab": "Gate Pass",
+      "relatedId": "GP-8844"
+    },
+    {
+      "id": "notif-1790504947288",
+      "type": "gatepass",
+      "title": "Gate Pass Approved",
+      "message": "Your gate pass GP-8841 to Central City Library & Book Depot has been approved by Er. Sandeep Rathore. Digital QR active.",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "Student",
+      "actionTab": "Gate Pass",
+      "relatedId": "GP-8841"
+    },
+    {
+      "id": "notif-1790504017633",
+      "type": "gatepass",
+      "title": "Gate Pass Approved",
+      "message": "Your gate pass GP-8842 to chandakaa has been approved by Er. Sandeep Rathore. Digital QR active.",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "Student",
+      "actionTab": "Gate Pass",
+      "relatedId": "GP-8842"
+    },
+    {
+      "id": "notif-1790502865109",
+      "type": "complaint",
+      "title": "Ticket CMP-1003 Update: In Progress",
+      "message": "Technician began on-site diagnostics at Aryabhata Bhavan (Block B) Room 101. ETA: Today, 04:30 PM",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "Student",
+      "actionTab": "Complaints",
+      "relatedId": "CMP-1003"
+    },
+    {
+      "id": "notif-1790502772337",
+      "type": "notice",
+      "title": "New Notice: hello gyesss",
+      "message": "Dr. A. Singh published a circular for CSE",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "All",
+      "actionTab": "Notices",
+      "relatedId": "NTC-504"
+    },
+    {
+      "id": "notif-1790417106875",
+      "type": "notice",
+      "title": "New Notice: Hostel Block B Emergency Inspection & Roll Call",
+      "message": "Er. Sandeep Rathore published a circular for Hostel",
+      "time": "Just now",
+      "isRead": false,
+      "targetRole": "All",
+      "actionTab": "Notices",
+      "relatedId": "NTC-503"
+    },
     {
       "id": "notif-1",
       "type": "gatepass",
@@ -439,6 +829,30 @@
   ],
   "messFeedback": [
     {
+      "id": "mf-1790595555989",
+      "date": "2026-09-28",
+      "mealType": "Breakfast",
+      "rating": 5,
+      "comment": "Quick rating for Breakfast",
+      "studentName": "Manoj Kumar Jena"
+    },
+    {
+      "id": "mf-1790594521397",
+      "date": "2026-09-28",
+      "mealType": "Breakfast",
+      "rating": 4,
+      "comment": "Quick rating for Breakfast",
+      "studentName": "Manoj Kumar Jena"
+    },
+    {
+      "id": "mf-1790594518652",
+      "date": "2026-09-28",
+      "mealType": "Breakfast",
+      "rating": 5,
+      "comment": "Quick rating for Breakfast",
+      "studentName": "Manoj Kumar Jena"
+    },
+    {
       "id": "mf-1",
       "date": "2026-09-24",
       "mealType": "Lunch",
@@ -508,8 +922,1320 @@
   },
   "auditLogs": [
     {
-      "id": "aud-1790446069936-362",
-      "timestamp": "9/26/2026, 6:07:49 PM",
+      "id": "aud-1791653078145-24",
+      "timestamp": "10/10/2026, 10:54:38 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "AI Chat Request",
+      "details": "Asked: \"Show today's timetable...\""
+    },
+    {
+      "id": "aud-1791652956869-726",
+      "timestamp": "10/10/2026, 10:52:36 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "AI Chat Request",
+      "details": "Asked: \"Check my attendance...\""
+    },
+    {
+      "id": "aud-1791652647229-232",
+      "timestamp": "10/10/2026, 10:47:27 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "AI Chat Request",
+      "details": "Asked: \"Show today's timetable...\""
+    },
+    {
+      "id": "aud-1791652628783-58",
+      "timestamp": "10/10/2026, 10:47:08 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "AI Chat Request",
+      "details": "Asked: \"Check my attendance...\""
+    },
+    {
+      "id": "aud-1791652430119-835",
+      "timestamp": "10/10/2026, 10:43:50 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "AI Chat Request",
+      "details": "Asked: \"Track my complaint...\""
+    },
+    {
+      "id": "aud-1791652407285-223",
+      "timestamp": "10/10/2026, 10:43:27 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "AI Chat Request",
+      "details": "Asked: \"Show today's timetable...\""
+    },
+    {
+      "id": "aud-1791652401155-149",
+      "timestamp": "10/10/2026, 10:43:21 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "AI Chat Request",
+      "details": "Asked: \"Check my attendance...\""
+    },
+    {
+      "id": "aud-1791652391676-702",
+      "timestamp": "10/10/2026, 10:43:11 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1791651844992-904",
+      "timestamp": "10/10/2026, 10:34:04 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "AI Chat Request",
+      "details": "Asked: \"Show today's timetable...\""
+    },
+    {
+      "id": "aud-1791465261806-105",
+      "timestamp": "8/10/2026, 6:44:21 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1791374198557-971",
+      "timestamp": "7/10/2026, 5:26:38 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1791374192567-643",
+      "timestamp": "7/10/2026, 5:26:32 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1791023276618-544",
+      "timestamp": "3/10/2026, 3:57:56 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1791023248952-389",
+      "timestamp": "3/10/2026, 3:57:28 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1791023166595-835",
+      "timestamp": "3/10/2026, 3:56:06 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1791023159687-642",
+      "timestamp": "3/10/2026, 3:55:59 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1791023148089-293",
+      "timestamp": "3/10/2026, 3:55:48 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1791023142646-31",
+      "timestamp": "3/10/2026, 3:55:42 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1791023055762-830",
+      "timestamp": "3/10/2026, 3:54:15 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790854397564-75",
+      "timestamp": "1/10/2026, 5:03:17 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790853222469-559",
+      "timestamp": "1/10/2026, 4:43:42 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790853215883-465",
+      "timestamp": "1/10/2026, 4:43:35 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790851130231-327",
+      "timestamp": "1/10/2026, 4:08:50 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790849439937-856",
+      "timestamp": "1/10/2026, 3:40:39 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790603174416-699",
+      "timestamp": "28/9/2026, 7:16:14 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790603168035-113",
+      "timestamp": "28/9/2026, 7:16:08 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790603000939-11",
+      "timestamp": "28/9/2026, 7:13:20 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790595864604-981",
+      "timestamp": "28/9/2026, 5:14:24 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790595851218-306",
+      "timestamp": "28/9/2026, 5:14:11 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790595555992-630",
+      "timestamp": "28/9/2026, 5:09:15 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "Mess Feedback",
+      "details": "Rated Breakfast 5/5"
+    },
+    {
+      "id": "aud-1790595132660-231",
+      "timestamp": "28/9/2026, 5:02:12 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790595086694-669",
+      "timestamp": "28/9/2026, 5:01:26 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790595073725-257",
+      "timestamp": "28/9/2026, 5:01:13 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "Notice Published",
+      "details": "Posted \"ebghberger\" targeting 2nd Year"
+    },
+    {
+      "id": "aud-1790595032179-750",
+      "timestamp": "28/9/2026, 5:00:32 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790595027332-351",
+      "timestamp": "28/9/2026, 5:00:27 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790595018016-901",
+      "timestamp": "28/9/2026, 5:00:18 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790595014874-918",
+      "timestamp": "28/9/2026, 5:00:14 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790594889869-254",
+      "timestamp": "28/9/2026, 4:58:09 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790594886246-261",
+      "timestamp": "28/9/2026, 4:58:06 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790594811620-215",
+      "timestamp": "28/9/2026, 4:56:51 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790594796152-172",
+      "timestamp": "28/9/2026, 4:56:36 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790594791985-818",
+      "timestamp": "28/9/2026, 4:56:31 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "Complaint Status Updated",
+      "details": "Moved CMP-1004 to Resolved"
+    },
+    {
+      "id": "aud-1790594755594-655",
+      "timestamp": "28/9/2026, 4:55:55 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "Complaint Status Updated",
+      "details": "Moved CMP-1004 to In Progress"
+    },
+    {
+      "id": "aud-1790594741715-605",
+      "timestamp": "28/9/2026, 4:55:41 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790594738485-566",
+      "timestamp": "28/9/2026, 4:55:38 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790594691235-808",
+      "timestamp": "28/9/2026, 4:54:51 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790594686872-885",
+      "timestamp": "28/9/2026, 4:54:46 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790594663927-746",
+      "timestamp": "28/9/2026, 4:54:23 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "Complaint Created",
+      "details": "Registered ticket CMP-1004: netwok  (Wi-Fi)"
+    },
+    {
+      "id": "aud-1790594615042-5",
+      "timestamp": "28/9/2026, 4:53:35 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790594610701-631",
+      "timestamp": "28/9/2026, 4:53:30 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790594521400-982",
+      "timestamp": "28/9/2026, 4:52:01 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "Mess Feedback",
+      "details": "Rated Breakfast 4/5"
+    },
+    {
+      "id": "aud-1790594518653-655",
+      "timestamp": "28/9/2026, 4:51:58 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "Mess Feedback",
+      "details": "Rated Breakfast 5/5"
+    },
+    {
+      "id": "aud-1790594450962-631",
+      "timestamp": "28/9/2026, 4:50:50 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790594447879-849",
+      "timestamp": "28/9/2026, 4:50:47 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790594442016-304",
+      "timestamp": "28/9/2026, 4:50:42 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "Gate Pass Reviewed",
+      "details": "Approved pass GP-8846 for Manoj Kumar Jena"
+    },
+    {
+      "id": "aud-1790594433643-848",
+      "timestamp": "28/9/2026, 4:50:33 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790594429130-159",
+      "timestamp": "28/9/2026, 4:50:29 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790594383960-828",
+      "timestamp": "28/9/2026, 4:49:43 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "Gate Pass Applied",
+      "details": "Applied for pass to chandaka  (GP-8846)"
+    },
+    {
+      "id": "aud-1790594294986-465",
+      "timestamp": "28/9/2026, 4:48:14 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790594274392-472",
+      "timestamp": "28/9/2026, 4:47:54 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790594262387-94",
+      "timestamp": "28/9/2026, 4:47:42 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790594105636-593",
+      "timestamp": "28/9/2026, 4:45:05 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790518100115-930",
+      "timestamp": "27/9/2026, 7:38:20 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790518095330-464",
+      "timestamp": "27/9/2026, 7:38:15 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790518089079-902",
+      "timestamp": "27/9/2026, 7:38:09 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "Notice Published",
+      "details": "Posted \"helllllllllllllllllll\" targeting CSE"
+    },
+    {
+      "id": "aud-1790518059642-546",
+      "timestamp": "27/9/2026, 7:37:39 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790518048483-267",
+      "timestamp": "27/9/2026, 7:37:28 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790517959888-556",
+      "timestamp": "27/9/2026, 7:35:59 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790517959880-748",
+      "timestamp": "27/9/2026, 7:35:59 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790517959874-321",
+      "timestamp": "27/9/2026, 7:35:59 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790517959860-797",
+      "timestamp": "27/9/2026, 7:35:59 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790517649382-333",
+      "timestamp": "27/9/2026, 7:30:49 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790517623984-678",
+      "timestamp": "27/9/2026, 7:30:23 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790517623967-36",
+      "timestamp": "27/9/2026, 7:30:23 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "Notice Published",
+      "details": "Posted \"QA Notice Warden\" targeting All Students"
+    },
+    {
+      "id": "aud-1790517623963-568",
+      "timestamp": "27/9/2026, 7:30:23 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790517623946-146",
+      "timestamp": "27/9/2026, 7:30:23 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "Notice Published",
+      "details": "Posted \"QA Notice Faculty\" targeting All Students"
+    },
+    {
+      "id": "aud-1790517623942-292",
+      "timestamp": "27/9/2026, 7:30:23 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790517623923-900",
+      "timestamp": "27/9/2026, 7:30:23 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "Notice Published",
+      "details": "Posted \"QA Notice Admin\" targeting All Students"
+    },
+    {
+      "id": "aud-1790517623912-851",
+      "timestamp": "27/9/2026, 7:30:23 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790513177822-385",
+      "timestamp": "27/9/2026, 6:16:17 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790513174710-147",
+      "timestamp": "27/9/2026, 6:16:14 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790513169970-882",
+      "timestamp": "27/9/2026, 6:16:09 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "Gate Pass Reviewed",
+      "details": "Approved pass GP-8845 for Manoj Kumar Jena"
+    },
+    {
+      "id": "aud-1790513165260-271",
+      "timestamp": "27/9/2026, 6:16:05 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790513159999-631",
+      "timestamp": "27/9/2026, 6:15:59 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790513143536-965",
+      "timestamp": "27/9/2026, 6:15:43 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "Gate Pass Applied",
+      "details": "Applied for pass to bbbsr (GP-8845)"
+    },
+    {
+      "id": "aud-1790513122809-466",
+      "timestamp": "27/9/2026, 6:15:22 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790513116840-189",
+      "timestamp": "27/9/2026, 6:15:16 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790511792137-866",
+      "timestamp": "27/9/2026, 5:53:12 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505708093-807",
+      "timestamp": "27/9/2026, 4:11:48 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790505427001-104",
+      "timestamp": "27/9/2026, 4:07:07 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505044544-658",
+      "timestamp": "27/9/2026, 4:00:44 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505044527-757",
+      "timestamp": "27/9/2026, 4:00:44 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505044494-555",
+      "timestamp": "27/9/2026, 4:00:44 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505044447-335",
+      "timestamp": "27/9/2026, 4:00:44 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505044434-90",
+      "timestamp": "27/9/2026, 4:00:44 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505035579-24",
+      "timestamp": "27/9/2026, 4:00:35 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505035573-839",
+      "timestamp": "27/9/2026, 4:00:35 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505035563-761",
+      "timestamp": "27/9/2026, 4:00:35 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505015360-564",
+      "timestamp": "27/9/2026, 4:00:15 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505015338-478",
+      "timestamp": "27/9/2026, 4:00:15 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505015278-985",
+      "timestamp": "27/9/2026, 4:00:15 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505015225-765",
+      "timestamp": "27/9/2026, 4:00:15 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790505015213-494",
+      "timestamp": "27/9/2026, 4:00:15 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790504998130-97",
+      "timestamp": "27/9/2026, 3:59:58 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "Password Changed",
+      "details": "Updated account security credentials"
+    },
+    {
+      "id": "aud-1790504980050-220",
+      "timestamp": "27/9/2026, 3:59:40 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "Gate Pass Reviewed",
+      "details": "Approved pass GP-8844 for Manoj Kumar Jena"
+    },
+    {
+      "id": "aud-1790504980044-823",
+      "timestamp": "27/9/2026, 3:59:40 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790504980039-521",
+      "timestamp": "27/9/2026, 3:59:40 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "Gate Pass Applied",
+      "details": "Applied for pass to QA Gate Pass Persistence Check (GP-8844)"
+    },
+    {
+      "id": "aud-1790504980036-129",
+      "timestamp": "27/9/2026, 3:59:40 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790504947289-299",
+      "timestamp": "27/9/2026, 3:59:07 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "Gate Pass Reviewed",
+      "details": "Approved pass GP-8841 for Manoj Kumar Jena"
+    },
+    {
+      "id": "aud-1790504947280-334",
+      "timestamp": "27/9/2026, 3:59:07 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790504947238-773",
+      "timestamp": "27/9/2026, 3:59:07 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790504185705-887",
+      "timestamp": "27/9/2026, 3:46:25 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790504179426-465",
+      "timestamp": "27/9/2026, 3:46:19 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790504171946-817",
+      "timestamp": "27/9/2026, 3:46:11 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "Gate Pass Applied",
+      "details": "Applied for pass to bbsr (GP-8843)"
+    },
+    {
+      "id": "aud-1790504139170-265",
+      "timestamp": "27/9/2026, 3:45:39 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790504132412-908",
+      "timestamp": "27/9/2026, 3:45:32 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790504037611-997",
+      "timestamp": "27/9/2026, 3:43:57 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790504017635-113",
+      "timestamp": "27/9/2026, 3:43:37 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "Gate Pass Reviewed",
+      "details": "Approved pass GP-8842 for Manoj Kumar Jena"
+    },
+    {
+      "id": "aud-1790504008572-29",
+      "timestamp": "27/9/2026, 3:43:28 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790504003371-858",
+      "timestamp": "27/9/2026, 3:43:23 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790503999877-274",
+      "timestamp": "27/9/2026, 3:43:19 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790503995811-55",
+      "timestamp": "27/9/2026, 3:43:15 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790503978358-150",
+      "timestamp": "27/9/2026, 3:42:58 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "Gate Pass Applied",
+      "details": "Applied for pass to chandakaa (GP-8842)"
+    },
+    {
+      "id": "aud-1790503955066-755",
+      "timestamp": "27/9/2026, 3:42:35 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790503950950-256",
+      "timestamp": "27/9/2026, 3:42:30 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790503868966-248",
+      "timestamp": "27/9/2026, 3:41:08 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790503702716-897",
+      "timestamp": "27/9/2026, 3:38:22 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790503698068-1",
+      "timestamp": "27/9/2026, 3:38:18 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790503664457-35",
+      "timestamp": "27/9/2026, 3:37:44 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790503660670-502",
+      "timestamp": "27/9/2026, 3:37:40 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790503517601-169",
+      "timestamp": "27/9/2026, 3:35:17 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790503427909-270",
+      "timestamp": "27/9/2026, 3:33:47 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790503422254-419",
+      "timestamp": "27/9/2026, 3:33:42 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790503366720-724",
+      "timestamp": "27/9/2026, 3:32:46 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790503040492-676",
+      "timestamp": "27/9/2026, 3:27:20 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790503037183-695",
+      "timestamp": "27/9/2026, 3:27:17 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790502924048-914",
+      "timestamp": "27/9/2026, 3:25:24 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790502913217-491",
+      "timestamp": "27/9/2026, 3:25:13 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790502881172-550",
+      "timestamp": "27/9/2026, 3:24:41 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790502875665-550",
+      "timestamp": "27/9/2026, 3:24:35 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790502865111-564",
+      "timestamp": "27/9/2026, 3:24:25 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "Complaint Status Updated",
+      "details": "Moved CMP-1003 to In Progress"
+    },
+    {
+      "id": "aud-1790502852999-310",
+      "timestamp": "27/9/2026, 3:24:12 pm",
+      "actor": "Rajesh Verma",
+      "role": "Staff",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790502849505-628",
+      "timestamp": "27/9/2026, 3:24:09 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790502836226-803",
+      "timestamp": "27/9/2026, 3:23:56 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790502833768-791",
+      "timestamp": "27/9/2026, 3:23:53 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790502788876-82",
+      "timestamp": "27/9/2026, 3:23:08 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790502781361-991",
+      "timestamp": "27/9/2026, 3:23:01 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790502772338-219",
+      "timestamp": "27/9/2026, 3:22:52 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "Notice Published",
+      "details": "Posted \"hello gyesss\" targeting CSE"
+    },
+    {
+      "id": "aud-1790502558249-383",
+      "timestamp": "27/9/2026, 3:19:18 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790502269088-802",
+      "timestamp": "27/9/2026, 3:14:29 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790502035974-541",
+      "timestamp": "27/9/2026, 3:10:35 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790502031172-279",
+      "timestamp": "27/9/2026, 3:10:31 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790502022327-510",
+      "timestamp": "27/9/2026, 3:10:22 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790502009069-341",
+      "timestamp": "27/9/2026, 3:10:09 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790501673804-364",
+      "timestamp": "27/9/2026, 3:04:33 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790449359785-242",
+      "timestamp": "27/9/2026, 12:32:39 am",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Logout",
+      "details": "Terminated session"
+    },
+    {
+      "id": "aud-1790449161053-528",
+      "timestamp": "27/9/2026, 12:29:21 am",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790419259066-82",
+      "timestamp": "26/9/2026, 4:10:59 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790417177415-865",
+      "timestamp": "26/9/2026, 3:36:17 pm",
+      "actor": "Dr. K. Venkataraman",
+      "role": "Admin",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790417114478-507",
+      "timestamp": "26/9/2026, 3:35:14 pm",
+      "actor": "Dr. A. Singh",
+      "role": "Faculty",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790417106876-25",
+      "timestamp": "26/9/2026, 3:35:06 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "Notice Published",
+      "details": "Posted \"Hostel Block B Emergency Inspection & Roll Call\" targeting Hostel"
+    },
+    {
+      "id": "aud-1790416997030-539",
+      "timestamp": "26/9/2026, 3:33:17 pm",
+      "actor": "Er. Sandeep Rathore",
+      "role": "Warden",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790416924307-711",
+      "timestamp": "26/9/2026, 3:32:04 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790416905977-273",
+      "timestamp": "26/9/2026, 3:31:45 pm",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
+      "id": "aud-1790410338633-871",
+      "timestamp": "26/9/2026, 1:42:18 pm",
       "actor": "Manoj Kumar Jena",
       "role": "Student",
       "action": "User Login",

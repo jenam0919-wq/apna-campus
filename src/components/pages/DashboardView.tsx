@@ -23,7 +23,7 @@ import {
   Star,
   MapPin,
 } from 'lucide-react';
-import { STUDENT_PROFILE } from '../../data/mockCampusData';
+import { UserAccount } from '../../types/auth';
 import { FEATURED_NOTICE, EMERGENCY_NOTICE } from '../../data/mockNotices';
 import { NavigationTab } from '../../types/campus';
 import { useCampusData } from '../../context/CampusDataContext';
@@ -31,11 +31,13 @@ import { useCampusData } from '../../context/CampusDataContext';
 interface DashboardViewProps {
   onNavigate: (tab: NavigationTab) => void;
   onSelectNotice?: (notice: any) => void;
+  currentUser?: UserAccount | null;
 }
 
 export const DashboardView: React.FC<DashboardViewProps> = ({
   onNavigate,
   onSelectNotice,
+  currentUser,
 }) => {
   const {
     complaints,
@@ -86,10 +88,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               <span>Apna Campus • One Campus. Everything Connected.</span>
             </div>
             <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight">
-              Welcome, {STUDENT_PROFILE.name}! 👋
+              Welcome, {currentUser?.name || 'Student'}! 👋
             </h1>
             <p className="text-xs sm:text-sm text-slate-300">
-              {STUDENT_PROFILE.degree} • {STUDENT_PROFILE.year} • Roll: {STUDENT_PROFILE.rollNumber}
+              {currentUser?.details?.degree || 'B.Tech'} • {currentUser?.details?.year || 'Unknown Year'} • Roll: {currentUser?.details?.rollNumber || 'Unknown'}
             </p>
           </div>
 
@@ -99,7 +101,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 Hostel Residence
               </span>
               <span className="text-xs font-bold text-white">
-                {STUDENT_PROFILE.hostel} • {STUDENT_PROFILE.room}
+                {currentUser?.details?.hostelAssigned || 'Unknown Hostel'} • {currentUser?.details?.room || 'Unknown Room'}
               </span>
             </div>
           </div>

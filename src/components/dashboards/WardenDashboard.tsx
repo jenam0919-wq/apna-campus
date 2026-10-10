@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { PrivateDataToggle } from '../PrivateDataToggle';
 import {
   Building,
   KeyRound,
@@ -485,7 +486,9 @@ export const WardenDashboard: React.FC<WardenDashboardProps> = ({ user, onLogout
                     <span className="text-slate-400 text-[11px] ml-2 font-mono">({s.roll})</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-slate-500">{s.phone}</span>
+                    <span className="text-slate-500">
+                      <PrivateDataToggle value={s.phone} maskType="phone" />
+                    </span>
                     <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
                       {s.status}
                     </span>

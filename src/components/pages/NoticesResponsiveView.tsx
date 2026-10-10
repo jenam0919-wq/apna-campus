@@ -12,7 +12,9 @@ import { EmptyState } from '../EmptyState';
 import { Pagination } from '../Pagination';
 import { BottomSummaryStats } from '../BottomSummaryStats';
 import { NoticeItem, NoticeCategory, NoticePriority } from '../../types/notice';
-import { ALL_NOTICES, FEATURED_NOTICE, EMERGENCY_NOTICE } from '../../data/mockNotices';
+import { FEATURED_NOTICE, EMERGENCY_NOTICE } from '../../data/mockNotices';
+import { useCampusData } from '../../context/CampusDataContext';
+import { useAuth } from '../../context/AuthContext';
 
 interface NoticesResponsiveViewProps {
   onTriggerToast: (msg: string) => void;
@@ -25,6 +27,8 @@ export const NoticesResponsiveView: React.FC<NoticesResponsiveViewProps> = ({
   selectedNoticeExternal,
   onClearSelectedNoticeExternal,
 }) => {
+  const { notices: campusNotices, markNoticeAsRead, completeNoticeAction } = useCampusData();
+  const { currentUser } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<NoticeCategory>('All');
   const [showUnreadOnly, setShowUnreadOnly] = useState(false);
@@ -33,7 +37,40 @@ export const NoticesResponsiveView: React.FC<NoticesResponsiveViewProps> = ({
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(4);
 
-  const [notices, setNotices] = useState<NoticeItem[]>(ALL_NOTICES);
+  const notices = useMemo<NoticeItem[]>(() => {
+    const audience = currentUser?.role.toLowerCase() || 'student';
+
+    return campusNotices
+      .filter((notice) => {
+        const target = notice.targetAudience.toLowerCase();
+        if (audience === 'admin' || target === 'all' || target === 'all students') return true;
+        if (target.includes(audience)) return true;
+        if (target === 'hostel') return audience === 'student' || audience === 'warden' || audience === 'staff';
+        if (target === 'cse' || target === '2nd year') return audience === 'student' || audience === 'faculty';
+        return false;
+      })
+      .map((notice) => ({
+        id: notice.id,
+        title: notice.title,
+        summary: notice.description,
+        fullContent: notice.description,
+        category: notice.category,
+        priority: notice.priority === 'Regular' ? 'Normal' : notice.priority,
+        postedAt: notice.publishDate,
+        dateStr: notice.publishDate,
+        issuingDepartment: notice.postedBy,
+        issuedBy: notice.postedBy,
+        issuerRole: notice.postedBy,
+        targetAudience: notice.targetAudience,
+        isRead: notice.isRead,
+        actionRequired: notice.actionRequired || false,
+        actionTitle: notice.actionLabel,
+        actionCompleted: notice.actionCompleted,
+        isPersonalized: false,
+        isEmergency: notice.priority === 'Emergency' || notice.category === 'Emergency',
+      }));
+  }, [campusNotices, currentUser?.role]);
+
   const [featuredNotice, setFeaturedNotice] = useState<NoticeItem>(FEATURED_NOTICE);
   const [emergencyNotice, setEmergencyNotice] = useState<NoticeItem>(EMERGENCY_NOTICE);
   const [internalSelectedNotice, setInternalSelectedNotice] = useState<NoticeItem | null>(null);
@@ -58,53 +95,42 @@ export const NoticesResponsiveView: React.FC<NoticesResponsiveViewProps> = ({
       return;
     }
 
-    setNotices((prev) =>
-      prev.map((n) => {
-        if (n.id === id) {
-          const newStatus = !n.isRead;
-          onTriggerToast(newStatus ? `Notice "${n.title.slice(0, 30)}..." marked as read` : `Notice marked as unread`);
-          return { ...n, isRead: newStatus };
-        }
-        return n;
-      })
-    );
+    campusNotices
+      .filter((notice) => notice.id === id)
+      .forEach(() => {
+        markNoticeAsRead(id);
+      });
   };
 
   const handleMarkAllAsRead = () => {
+    notices.forEach((notice) => {
+      if (!notice.isRead) markNoticeAsRead(notice.id);
+    });
     setFeaturedNotice((prev) => ({ ...prev, isRead: true }));
     setEmergencyNotice((prev) => ({ ...prev, isRead: true }));
-    setNotices((prev) => prev.map((n) => ({ ...n, isRead: true })));
     onTriggerToast('All campus notices marked as read.');
   };
 
   const handleAcknowledgeEmergency = (id: string) => {
+    markNoticeAsRead(id);
+    completeNoticeAction(id);
     setEmergencyNotice((prev) => ({
       ...prev,
       acknowledged: true,
       isRead: true,
       actionCompleted: true,
     }));
-    onTriggerToast('✓ Emergency evacuation drill protocol acknowledged.');
+    onTriggerToast('Emergency notice acknowledged.');
   };
 
   const handleTakeAction = (notice: NoticeItem) => {
+    completeNoticeAction(notice.id);
     if (notice.actionTitle?.includes('Hall Ticket')) {
       onTriggerToast('Mid-Semester Examination Hall Ticket downloaded (PDF).');
     } else if (notice.actionTitle?.includes('Rebate')) {
       onTriggerToast('Mess Rebate application window opened in student portal.');
-    } else if (notice.actionTitle?.includes('Acknowledge')) {
-      handleAcknowledgeEmergency(notice.id);
-      return;
     } else {
       onTriggerToast(`Action "${notice.actionTitle || 'Verified'}" completed.`);
-    }
-
-    if (notice.id === featuredNotice.id) {
-      setFeaturedNotice((prev) => ({ ...prev, actionCompleted: true, isRead: true }));
-    } else {
-      setNotices((prev) =>
-        prev.map((n) => (n.id === notice.id ? { ...n, actionCompleted: true, isRead: true } : n))
-      );
     }
   };
 
@@ -126,9 +152,7 @@ export const NoticesResponsiveView: React.FC<NoticesResponsiveViewProps> = ({
       Emergency: 0,
     };
     notices.forEach((n) => {
-      if (counts[n.category] !== undefined) {
-        counts[n.category]++;
-      }
+      if (counts[n.category] !== undefined) counts[n.category]++;
     });
     return counts;
   }, [notices]);
@@ -138,41 +162,20 @@ export const NoticesResponsiveView: React.FC<NoticesResponsiveViewProps> = ({
       .filter((n) => {
         if (searchQuery.trim()) {
           const q = searchQuery.toLowerCase();
-          const matchTitle = n.title.toLowerCase().includes(q);
-          const matchSummary = n.summary.toLowerCase().includes(q);
-          const matchDept = n.issuingDepartment.toLowerCase().includes(q);
-          const matchAudience = n.targetAudience.toLowerCase().includes(q);
-          if (!matchTitle && !matchSummary && !matchDept && !matchAudience) return false;
+          if (!n.title.toLowerCase().includes(q) && !n.summary.toLowerCase().includes(q) && !n.issuingDepartment.toLowerCase().includes(q) && !n.targetAudience.toLowerCase().includes(q)) return false;
         }
-
-        if (!showUnreadOnly && activeCategory !== 'All' && n.category !== activeCategory) {
-          return false;
-        }
-
-        if (showUnreadOnly && n.isRead) {
-          return false;
-        }
-
-        if (priorityFilter !== 'All' && n.priority !== priorityFilter) {
-          return false;
-        }
-
+        if (activeCategory !== 'All' && n.category !== activeCategory) return false;
+        if (showUnreadOnly && n.isRead) return false;
+        if (priorityFilter !== 'All' && n.priority !== priorityFilter) return false;
         return true;
       })
       .sort((a, b) => {
         if (sortBy === 'priority') {
-          const priorityScore: Record<NoticePriority, number> = {
-            Emergency: 4,
-            Urgent: 3,
-            Important: 2,
-            Normal: 1,
-          };
+          const priorityScore: Record<NoticePriority, number> = { Emergency: 4, Urgent: 3, Important: 2, Normal: 1 };
           return priorityScore[b.priority] - priorityScore[a.priority];
         }
-        if (sortBy === 'action') {
-          return (b.actionRequired ? 1 : 0) - (a.actionRequired ? 1 : 0);
-        }
-        return 0;
+        if (sortBy === 'action') return (b.actionRequired ? 1 : 0) - (a.actionRequired ? 1 : 0);
+        return b.postedAt.localeCompare(a.postedAt);
       });
   }, [notices, searchQuery, activeCategory, showUnreadOnly, priorityFilter, sortBy]);
 

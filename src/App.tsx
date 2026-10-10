@@ -42,6 +42,7 @@ import { CheckCircle2, ShieldCheck, LogOut, ArrowRight, RefreshCw } from 'lucide
 import { useCampusData } from './context/CampusDataContext';
 import { OfflineBanner } from './components/OfflineBanner';
 import { Campus360Logo } from './components/Campus360Logo';
+import { ApnaCampusAI } from './components/chat/ApnaCampusAI';
 
 function AppContent() {
   const { notices } = useCampusData();
@@ -351,6 +352,7 @@ function AppContent() {
                   <>
                     {activeNavTab === 'Home' && (
                       <DashboardView
+                        currentUser={currentUser}
                         onNavigate={handleNavigate}
                         onSelectNotice={handleSelectNoticeFromAnywhere}
                       />
@@ -397,6 +399,11 @@ function AppContent() {
               <Footer />
             </div>
           </main>
+          
+          {/* AI Chatbot Assistant (Visible globally when authenticated and allowed) */}
+          {isAuthenticated && isAllowed && (
+            <ApnaCampusAI />
+          )}
         </div>
       </div>
 

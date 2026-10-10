@@ -93,10 +93,14 @@ export function clearAuthSession() {
   }
 }
 
+interface FetchOptions extends RequestInit {
+  timeout?: number;
+}
+
 // Universal fetch wrapper with timeout and auth headers
 async function apiFetch<T>(
   endpoint: string,
-  options: RequestInit = {}
+  options: FetchOptions = {}
 ): Promise<{ data?: T; error?: string; status: number }> {
   const token = getAuthToken();
   const headers: Record<string, string> = {
@@ -110,7 +114,7 @@ async function apiFetch<T>(
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 6000); // 6s timeout for patchy networks
+    const timeoutId = setTimeout(() => controller.abort(), options.timeout || 6000); // Default 6s timeout
 
     const res = await fetch(`${API_BASE}${endpoint}`, {
       ...options,
@@ -136,8 +140,13 @@ async function apiFetch<T>(
     return { status: res.status } as any;
   } catch (err: any) {
     // Offline or connection timeout
+    const isTimeout = err.name === 'AbortError';
+    const isAiRequest = options.timeout && options.timeout > 10000;
+    
     return {
-      error: err.name === 'AbortError' ? 'Connection timed out. Check network.' : 'Network connection failure',
+      error: isTimeout 
+        ? (isAiRequest ? 'Apna Campus AI took too long to respond. Please try again.' : 'Connection timed out. Check network.') 
+        : 'Unable to reach Apna Campus. Check that the server is running.',
       status: 0,
     };
   }
@@ -356,5 +365,14 @@ export const CampusAPI = {
       firestoreActive: boolean;
       authActive: boolean;
     }>('/firebase/status');
+  },
+
+  // AI Chat
+  async sendAiChatMessage(message: string, history: { role: string; text: string }[]) {
+    return apiFetch<{ reply: string; error?: string }>('/ai/chat', {
+      method: 'POST',
+      body: JSON.stringify({ message, history }),
+      timeout: 45000,
+    });
   },
 };

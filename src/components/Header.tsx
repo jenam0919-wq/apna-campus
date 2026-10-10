@@ -23,7 +23,6 @@ import {
 } from 'lucide-react';
 import { Campus360Logo } from './Campus360Logo';
 import { GatePassVerificationModal } from './modals/GatePassVerificationModal';
-import { STUDENT_PROFILE } from '../data/mockCampusData';
 import { UserAccount } from '../types/auth';
 import { useCampusData } from '../context/CampusDataContext';
 import { NavigationTab } from '../types/campus';
@@ -467,8 +466,8 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <div className="relative">
               <img
-                src={currentUser?.avatarUrl || STUDENT_PROFILE.avatarUrl}
-                alt={currentUser?.name || STUDENT_PROFILE.name}
+                src={currentUser?.avatarUrl || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=250'}
+                alt={currentUser?.name || 'User'}
                 referrerPolicy="no-referrer"
                 className="w-9 h-9 rounded-xl object-cover ring-2 ring-white shadow-xs border border-slate-200"
               />
@@ -478,14 +477,14 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="hidden xl:block leading-tight pr-1">
               <div className="flex items-center gap-1.5">
                 <span className="text-xs font-bold text-slate-900 tracking-tight group-hover:text-[#1677FF] transition-colors">
-                  {currentUser?.name || STUDENT_PROFILE.name}
+                  {currentUser?.name || 'User'}
                 </span>
                 <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-blue-50 text-[#1677FF] border border-blue-200">
                   {currentUser?.role || 'Student'}
                 </span>
               </div>
               <div className="text-[11px] text-slate-500 font-normal truncate max-w-[150px]">
-                {currentUser?.title || `${STUDENT_PROFILE.year} • ${STUDENT_PROFILE.section}`}
+                {currentUser?.title || `${currentUser?.details?.year || ''} ${currentUser?.details?.section ? '• ' + currentUser.details.section : ''}`}
               </div>
             </div>
 
@@ -496,7 +495,7 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="absolute right-0 mt-2 w-72 bg-white border border-slate-200 rounded-2xl shadow-xl z-30 p-2 text-xs">
               <div className="p-3 bg-slate-50 rounded-xl mb-2">
                 <div className="flex items-center justify-between">
-                  <div className="font-bold text-slate-900 text-sm">{currentUser?.name || STUDENT_PROFILE.name}</div>
+                  <div className="font-bold text-slate-900 text-sm">{currentUser?.name || 'User'}</div>
                   <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-blue-100 text-[#1677FF]">
                     {currentUser?.role || 'Student'}
                   </span>

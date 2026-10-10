@@ -2,7 +2,7 @@
  * Campus 360 - Full-Stack Express Server with Role-Based Access Control (RBAC)
  * "One Campus. Everything Connected."
  */
-
+import 'dotenv/config';
 import express, { Request, Response, NextFunction } from 'express';
 import { createServer as createViteServer } from 'vite';
 import path from 'path';
@@ -14,6 +14,7 @@ import {
   syncToFirestore,
   deleteFromFirestore
 } from './server-firebase.ts';
+import { setupAIRoutes } from './server-ai.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -55,7 +56,7 @@ const INITIAL_DB: CampusDB = {
       status: 'active',
       phone: '+91 98765 43210',
       password: 'student123',
-      details: { rollNumber: '2024CS1042', section: 'Section A', hostelAssigned: 'Aryabhata Bhavan (Block B)' }
+      details: { rollNumber: '2024CS1042', section: 'Section A', hostelAssigned: 'Aryabhata Bhavan (Block B)', room: 'Room 204', bloodGroup: 'B+ Positive', emergencyContact: '+91 98765 11223 (Father)', personalEmail: 'jena06459@gmail.com', year: '2nd Year', semester: '3rd Semester', degree: 'B.Tech Computer Science & Engineering' }
     },
     'student@campus360.edu': {
       id: 'usr-student-01',
@@ -66,7 +67,7 @@ const INITIAL_DB: CampusDB = {
       department: 'Computer Science & Engineering',
       avatarUrl: '/src/assets/images/manoj_student_1790405327601.jpg',
       status: 'active',
-      details: { rollNumber: '2024CS1042', section: 'Section A', hostelAssigned: 'Aryabhata Bhavan (Block B)' }
+      details: { rollNumber: '2024CS1042', section: 'Section A', hostelAssigned: 'Aryabhata Bhavan (Block B)', room: 'Room 204', bloodGroup: 'B+ Positive', emergencyContact: '+91 98765 11223 (Father)', personalEmail: 'jena06459@gmail.com', year: '2nd Year', semester: '3rd Semester', degree: 'B.Tech Computer Science & Engineering' }
     },
     'jena06459@gmail.com': {
       id: 'usr-student-01',
@@ -79,7 +80,7 @@ const INITIAL_DB: CampusDB = {
       status: 'active',
       phone: '+91 98765 43210',
       password: 'student123',
-      details: { rollNumber: '2024CS1042', section: 'Section A', hostelAssigned: 'Aryabhata Bhavan (Block B)' }
+      details: { rollNumber: '2024CS1042', section: 'Section A', hostelAssigned: 'Aryabhata Bhavan (Block B)', room: 'Room 204', bloodGroup: 'B+ Positive', emergencyContact: '+91 98765 11223 (Father)', personalEmail: 'jena06459@gmail.com', year: '2nd Year', semester: '3rd Semester', degree: 'B.Tech Computer Science & Engineering' }
     },
     'manoj.jena@campus360.edu': {
       id: 'usr-student-01',
@@ -92,7 +93,7 @@ const INITIAL_DB: CampusDB = {
       status: 'active',
       phone: '+91 98765 43210',
       password: 'student123',
-      details: { rollNumber: '2024CS1042', section: 'Section A', hostelAssigned: 'Aryabhata Bhavan (Block B)' }
+      details: { rollNumber: '2024CS1042', section: 'Section A', hostelAssigned: 'Aryabhata Bhavan (Block B)', room: 'Room 204', bloodGroup: 'B+ Positive', emergencyContact: '+91 98765 11223 (Father)', personalEmail: 'jena06459@gmail.com', year: '2nd Year', semester: '3rd Semester', degree: 'B.Tech Computer Science & Engineering' }
     },
     'faculty@campus360.demo': {
       id: 'usr-faculty-01',
@@ -646,7 +647,12 @@ app.post('/api/auth/change-password', authMiddleware, (req: AuthRequest, res: Re
 
 // 2. User Management (Admin only)
 app.get('/api/users', authMiddleware, requireRoles('Admin', 'Faculty'), (req: AuthRequest, res: Response) => {
-  const safeUsers = Object.values(db.users).map(({ password, ...u }) => u);
+  const safeUsers = Object.values(db.users).map(({ password, ...u }) => {
+    if (req.user.role === 'Admin') return u;
+    // Strip private fields for non-admin roles
+    const { phone, email, ...publicData } = u;
+    return { ...publicData, phone: null, email: null };
+  });
   return res.json({ users: safeUsers });
 });
 
@@ -684,8 +690,13 @@ app.get('/api/complaints', authMiddleware, (req: AuthRequest, res: Response) => 
     );
     return res.json({ complaints: filtered });
   }
+  const safeComplaints = db.complaints.map(c => {
+    if (req.user.role === 'Admin') return c;
+    const { studentEmail, ...publicData } = c;
+    return { ...publicData, studentEmail: null };
+  });
 
-  return res.json({ complaints: db.complaints });
+  return res.json({ complaints: safeComplaints });
 });
 
 app.post('/api/complaints', authMiddleware, requireRoles('Student', 'Admin'), (req: AuthRequest, res: Response) => {
@@ -909,12 +920,18 @@ app.get('/api/gatepasses', authMiddleware, (req: AuthRequest, res: Response) => 
     const filtered = db.gatePasses.filter((g) => g.studentRoll === studentRoll || g.studentName === req.user.name);
     return res.json({ gatePasses: filtered });
   }
-  return res.json({ gatePasses: db.gatePasses });
+  const safeGatePasses = db.gatePasses.map(g => {
+    if (req.user.role === 'Admin' || req.user.role === 'Warden') return g;
+    const { parentContact, ...publicData } = g;
+    return { ...publicData, parentContact: null };
+  });
+  return res.json({ gatePasses: safeGatePasses });
 });
 
 app.post('/api/gatepasses', authMiddleware, requireRoles('Student', 'Admin'), (req: AuthRequest, res: Response) => {
-  const { destination, reason, departureTime, returnTime, parentContact } = req.body;
-  if (!destination || !reason || !departureTime || !returnTime) {
+  const { destination, reason, departureTime, expectedReturnTime, returnTime, parentContact } = req.body;
+  const resolvedReturnTime = expectedReturnTime || returnTime;
+  if (!destination || !reason || !departureTime || !resolvedReturnTime) {
     return res.status(400).json({ error: 'Destination, reason, departure, and return times are required' });
   }
 
@@ -928,7 +945,8 @@ app.post('/api/gatepasses', authMiddleware, requireRoles('Student', 'Admin'), (r
     destination,
     reason,
     departureTime,
-    returnTime,
+    expectedReturnTime: resolvedReturnTime,
+    returnTime: resolvedReturnTime,
     parentContact: parentContact || req.user.phone || '+91 98765 11223',
     status: 'Pending',
     qrPayload: `CAMPUS360-${passId}-${studentRoll}-PENDING`,
@@ -1015,8 +1033,22 @@ app.post('/api/gatepasses/verify', (req: Request, res: Response) => {
 });
 
 // 6. Notices
-app.get('/api/notices', authMiddleware, (_req: AuthRequest, res: Response) => {
-  return res.json({ notices: db.notices });
+app.get('/api/notices', authMiddleware, (req: AuthRequest, res: Response) => {
+  if (req.user.role === 'Admin') {
+    return res.json({ notices: db.notices });
+  }
+
+  const role = req.user.role.toLowerCase();
+  const visibleNotices = db.notices.filter((notice) => {
+    const target = String(notice.targetAudience || 'All Students').toLowerCase();
+    if (target === 'all' || target === 'all students') return true;
+    if (target.includes(role)) return true;
+    if (target === 'hostel') return role === 'student' || role === 'warden' || role === 'staff';
+    if (target === 'cse' || target === '2nd year') return role === 'student' || role === 'faculty';
+    return false;
+  });
+
+  return res.json({ notices: visibleNotices });
 });
 
 app.post('/api/notices', authMiddleware, requireRoles('Admin', 'Faculty', 'Warden'), (req: AuthRequest, res: Response) => {
@@ -1193,6 +1225,9 @@ app.post('/api/fees/pay', authMiddleware, requireRoles('Student', 'Admin'), (req
 
   return res.json({ success: true, txnId, feeDetails: db.feeDetails });
 });
+
+// AI Chatbot Integration
+setupAIRoutes(app, db, authMiddleware, recordAudit);
 
 // 11. Audit Logs
 app.get('/api/audit-logs', authMiddleware, requireRoles('Admin', 'Warden', 'Staff'), (_req: AuthRequest, res: Response) => {

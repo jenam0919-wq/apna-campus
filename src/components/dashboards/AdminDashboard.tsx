@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { PrivateDataToggle } from '../PrivateDataToggle';
 import {
   ShieldAlert,
   Users,
@@ -118,6 +119,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ user, onLogout }
     { id: 'STU-1044', name: 'Priya Nambiar', email: 'priya.n@campus360.demo', role: 'Student', department: 'Electronics & Comm', active: false, phone: '+91 98765 43212', roomOrHostel: 'Gargi Hall G-102', yearOrDesignation: '2nd Year' },
     { id: 'FAC-1092', name: 'Dr. Anand Singh', email: 'faculty@campus360.demo', role: 'Faculty', department: 'Computer Science', active: true, phone: '+91 98765 43220', yearOrDesignation: 'Associate Professor & HOD' },
     { id: 'FAC-1093', name: 'Prof. T. Sharma', email: 't.sharma@campus360.demo', role: 'Faculty', department: 'Computer Science', active: true, phone: '+91 98765 43221', yearOrDesignation: 'Assistant Professor' },
+    { id: 'FAC-1094', name: 'Prof Paresh Kumar Malik', email: 'paresh.malik@campus360.demo', role: 'Faculty', department: 'Computer Science', active: true, yearOrDesignation: 'Professor' },
     { id: 'WRD-201', name: 'Er. Sandeep Rathore', email: 'warden@campus360.demo', role: 'Warden', department: 'Hostel Block B Council', active: true, phone: '+91 98765 43230', roomOrHostel: 'Aryabhata Bhavan', yearOrDesignation: 'Senior Warden' },
     { id: 'WRD-202', name: 'Dr. Sunita Deshmukh', email: 'sunita.d@campus360.demo', role: 'Warden', department: 'Girls Hostel Council', active: true, phone: '+91 98765 43231', roomOrHostel: 'Gargi Bhavan', yearOrDesignation: 'Chief Warden' },
     { id: 'STF-301', name: 'Rajesh Verma', email: 'staff@campus360.demo', role: 'Staff', department: 'Plumbing & Facilities', active: true, phone: '+91 98765 43240', yearOrDesignation: 'Maintenance Lead' },
@@ -565,7 +567,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ user, onLogout }
                       <td className="py-3 px-4 font-mono font-bold text-slate-900">{u.id}</td>
                       <td className="py-3 px-4">
                         <div className="font-bold text-slate-800">{u.name}</div>
-                        <div className="text-slate-400 text-[11px]">{u.email}</div>
+                        <div className="text-slate-400 text-[11px]">
+                          <PrivateDataToggle value={u.email} maskType="email" />
+                        </div>
                       </td>
                       <td className="py-3 px-4">
                         <span

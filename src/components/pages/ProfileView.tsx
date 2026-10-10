@@ -21,9 +21,10 @@ import {
   EyeOff,
   Save,
 } from 'lucide-react';
-import { STUDENT_PROFILE } from '../../data/mockCampusData';
+
 import { UserAccount } from '../../types/auth';
 import { CampusAPI, setStoredUser, getStoredUser } from '../../services/api';
+import { PrivateDataToggle } from '../PrivateDataToggle';
 
 interface ProfileViewProps {
   onLogout?: () => void;
@@ -37,12 +38,10 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ onLogout, user }) => {
 
   // Contact details editing state
   const [showEditContactModal, setShowEditContactModal] = useState(false);
-  const [phoneState, setPhoneState] = useState(user?.phone || STUDENT_PROFILE.phone);
-  const [emergencyState, setEmergencyState] = useState(STUDENT_PROFILE.emergencyContact);
-  const [bloodGroupState, setBloodGroupState] = useState(STUDENT_PROFILE.bloodGroup);
-  const [personalEmailState, setPersonalEmailState] = useState(
-    user?.email?.includes('gmail') ? user.email : 'jena06459@gmail.com'
-  );
+  const [phoneState, setPhoneState] = useState(user?.phone || 'Not available');
+  const [emergencyState, setEmergencyState] = useState(user?.details?.emergencyContact || 'Not available');
+  const [bloodGroupState, setBloodGroupState] = useState(user?.details?.bloodGroup || 'Not available');
+  const [personalEmailState, setPersonalEmailState] = useState(user?.details?.personalEmail || 'Not available');
   const [contactSuccessMessage, setContactSuccessMessage] = useState<string | null>(null);
 
   // Password Change Modal State
@@ -58,11 +57,16 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ onLogout, user }) => {
   // Logout confirm modal
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
 
-  const displayName = user?.name || STUDENT_PROFILE.name;
-  const displayEmail = user?.email || STUDENT_PROFILE.email;
-  const displayRoll = user?.details?.rollNumber || STUDENT_PROFILE.rollNumber;
-  const displayHostel = user?.details?.hostelAssigned || STUDENT_PROFILE.hostel;
-  const displayDegree = STUDENT_PROFILE.degree;
+  const displayName = user?.name || 'Not available';
+  const displayEmail = user?.email || 'Not available';
+  const displayRoll = user?.details?.rollNumber || 'Not available';
+  const displayHostel = user?.details?.hostelAssigned || 'Not available';
+  const displayDegree = user?.details?.degree || 'Not available';
+  const displayYear = user?.details?.year || 'Not available';
+  const displaySemester = user?.details?.semester || 'Not available';
+  const displaySection = user?.details?.section || 'Not available';
+  const displayRoom = user?.details?.room || 'Not available';
+  const displayAvatar = user?.avatarUrl || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=250';
 
   const handleSaveContact = (e: React.FormEvent) => {
     e.preventDefault();
@@ -118,7 +122,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ onLogout, user }) => {
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 text-center sm:text-left">
           <div className="relative shrink-0">
             <img
-              src={user?.avatarUrl || STUDENT_PROFILE.avatarUrl}
+              src={displayAvatar}
               alt={displayName}
               referrerPolicy="no-referrer"
               className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover ring-4 ring-blue-50 border-2 border-[#2563EB]"
@@ -133,7 +137,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ onLogout, user }) => {
                   {displayName}
                 </h1>
                 <p className="text-xs sm:text-sm font-semibold text-[#2563EB]">
-                  {displayDegree} • {STUDENT_PROFILE.year}
+                  {displayDegree} • {displayYear}
                 </p>
               </div>
 
@@ -181,26 +185,40 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ onLogout, user }) => {
               <span className="font-bold text-slate-800">{displayEmail}</span>
             </div>
 
-            <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl">
+            <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl items-center">
               <span className="text-slate-500 font-medium">Personal Email</span>
-              <span className="font-bold text-slate-800">{personalEmailState}</span>
+              <PrivateDataToggle 
+                value={personalEmailState} 
+                maskType="email" 
+                className="font-bold text-slate-800" 
+              />
             </div>
 
-            <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl">
+            <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl items-center">
               <span className="text-slate-500 font-medium">Registered Mobile</span>
-              <span className="font-bold text-slate-800">{phoneState}</span>
+              <PrivateDataToggle 
+                value={phoneState} 
+                maskType="phone" 
+                className="font-bold text-slate-800" 
+              />
             </div>
 
-            <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl">
+            <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl items-center">
               <span className="text-slate-500 font-medium">Blood Group</span>
-              <span className="font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">
-                {bloodGroupState}
-              </span>
+              <PrivateDataToggle 
+                value={bloodGroupState} 
+                maskType="highly_sensitive" 
+                className="font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200" 
+              />
             </div>
 
-            <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl">
+            <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl items-center">
               <span className="text-slate-500 font-medium">Emergency Contact</span>
-              <span className="font-bold text-slate-800">{emergencyState}</span>
+              <PrivateDataToggle 
+                value={emergencyState} 
+                maskType="phone" 
+                className="font-bold text-slate-800" 
+              />
             </div>
           </div>
         </div>
@@ -215,12 +233,12 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ onLogout, user }) => {
           <div className="space-y-2.5 text-xs">
             <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl">
               <span className="text-slate-500 font-medium">Current Semester</span>
-              <span className="font-bold text-slate-800">{STUDENT_PROFILE.semester}</span>
+              <span className="font-bold text-slate-800">{displaySemester}</span>
             </div>
 
             <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl">
               <span className="text-slate-500 font-medium">Class Section</span>
-              <span className="font-bold text-slate-800">{STUDENT_PROFILE.section}</span>
+              <span className="font-bold text-slate-800">{displaySection}</span>
             </div>
 
             <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl">
@@ -230,7 +248,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ onLogout, user }) => {
 
             <div className="flex justify-between p-2.5 bg-slate-50 rounded-xl">
               <span className="text-slate-500 font-medium">Hostel Room</span>
-              <span className="font-bold text-slate-800">{STUDENT_PROFILE.room}</span>
+              <span className="font-bold text-slate-800">{displayRoom}</span>
             </div>
           </div>
         </div>
