@@ -922,6 +922,14 @@
   },
   "auditLogs": [
     {
+      "id": "aud-1791659617595-327",
+      "timestamp": "11/10/2026, 12:43:37 am",
+      "actor": "Manoj Kumar Jena",
+      "role": "Student",
+      "action": "User Login",
+      "details": "Signed into Campus 360 session"
+    },
+    {
       "id": "aud-1791656755082-800",
       "timestamp": "10/10/2026, 11:55:55 pm",
       "actor": "Dr. K. Venkataraman",
