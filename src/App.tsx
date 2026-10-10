@@ -55,6 +55,7 @@ function AppContent() {
     currentPath,
     navigate,
     logout,
+    setCurrentUser,
   } = useAuth();
 
   const [transitionUser, setTransitionUser] = useState<UserAccount | null>(null);
@@ -96,6 +97,7 @@ function AppContent() {
   const handleTransitionComplete = () => {
     if (transitionUser) {
       const targetDashboard = getRoleDashboardPath(transitionUser.role);
+      setCurrentUser(transitionUser);
       navigate(targetDashboard);
       setTransitionUser(null);
       setActiveNavTab('Home');

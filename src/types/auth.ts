@@ -159,6 +159,7 @@ export interface AuthContextType extends AuthState {
   }>;
   logout: () => Promise<void>;
   refreshUser: () => Promise<UserAccount | null>;
+  setCurrentUser: (user: UserAccount | null) => void;
   hasRole: (roles: UserRole | UserRole[]) => boolean;
   hasPermission: (permission: Permission) => boolean;
 }

@@ -134,6 +134,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         if (current === '/login' || current === '/') {
           navigate(getRoleDashboardPath(validatedUser.role), { replace: true });
         }
+      } else if (cachedUser) {
+        // Fallback to cached user if API fails on Vercel or offline
+        setCurrentUser(cachedUser);
+        const current = window.location.pathname;
+        if (current === '/login' || current === '/') {
+          navigate(getRoleDashboardPath(cachedUser.role), { replace: true });
+        }
       } else {
         // Session invalid or expired: clear state and route to login
         clearAuthSession();
@@ -290,6 +297,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     login,
     logout,
     refreshUser,
+    setCurrentUser,
     hasRole,
     hasPermission,
   };
