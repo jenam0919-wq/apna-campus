@@ -149,10 +149,13 @@ ${JSON.stringify(contextData, null, 2)}`;
       const aiStartTime = Date.now();
       
       let response;
-      let retries = 3;
+      let attempt = 0;
+      const maxAttempts = 3;
       let backoff = 1000;
       
-      while (retries > 0) {
+      while (attempt < maxAttempts) {
+        attempt++;
+        const attemptStartTime = Date.now();
         try {
           response = await ai.models.generateContent({
             model: aiModel,
@@ -160,17 +163,44 @@ ${JSON.stringify(contextData, null, 2)}`;
           });
           break; // Success
         } catch (error: any) {
-          retries--;
-          console.warn(`[AI][${requestId}] AI provider request failed. Retries left: ${retries}. Error: ${error.message}`);
+          const attemptDuration = Date.now() - attemptStartTime;
+          const status = error.status || error.response?.status || 500;
+          console.warn(`[AI][${requestId}] Attempt ${attempt}/${maxAttempts} failed after ${attemptDuration}ms. Status: ${status}. Error: ${error.message}`);
           
-          const isTemporary = error.status === 503 || error.status === 429 || (error.message && (error.message.includes('overloaded') || error.message.includes('fetch failed')));
-          
-          if (retries === 0 || !isTemporary) {
+          if (attempt >= maxAttempts) {
             throw error;
           }
+
+          // Check if it's a retryable error (only transient failures)
+          const isRateLimit = status === 429;
+          const isServerError = status >= 500 && status < 600;
+          const isNetworkError = error.message && (error.message.includes('fetch failed') || error.message.includes('network') || error.message.includes('timeout') || error.message.includes('overloaded'));
           
-          await new Promise(resolve => setTimeout(resolve, backoff));
-          backoff *= 2;
+          if (!isRateLimit && !isServerError && !isNetworkError) {
+             // Do not retry 400 (Invalid), 401/403 (Auth), etc.
+             throw error;
+          }
+          
+          // Calculate wait time
+          let waitTime = backoff;
+          
+          // Check for Retry-After header
+          const retryAfter = error.response?.headers?.get('retry-after') || error.headers?.['retry-after'];
+          if (retryAfter) {
+            const parsedRetry = parseInt(retryAfter, 10);
+            if (!isNaN(parsedRetry)) {
+               waitTime = parsedRetry * 1000;
+            }
+          }
+          
+          // Add jitter (±20%) to avoid thundering herd
+          const jitter = waitTime * 0.2 * (Math.random() * 2 - 1);
+          const finalWaitTime = Math.max(1000, waitTime + jitter);
+          
+          console.log(`[AI][${requestId}] Retrying in ${Math.round(finalWaitTime)}ms...`);
+          await new Promise(resolve => setTimeout(resolve, finalWaitTime));
+          
+          backoff *= 2; // Exponential backoff for next round
         }
       }
 
