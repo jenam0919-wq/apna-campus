@@ -36,7 +36,7 @@ export function getRoleDashboardPath(role: UserRole): string {
     case 'Staff':
       return '/staff/dashboard';
     default:
-      return '/student/dashboard';
+      return '/login';
   }
 }
 
@@ -115,8 +115,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
     if (!token && !cachedUser) {
       setLoading(false);
-      // If user landed on a protected path without session, route to /login
-      if (isProtectedPath(window.location.pathname)) {
+      // If user landed on a protected path or root without session, route to /login
+      if (isProtectedPath(window.location.pathname) || window.location.pathname === '/') {
         navigate('/login', { replace: true });
       }
       return;
@@ -145,7 +145,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         // Session invalid or expired: clear state and route to login
         clearAuthSession();
         setCurrentUser(null);
-        if (isProtectedPath(window.location.pathname)) {
+        if (isProtectedPath(window.location.pathname) || window.location.pathname === '/') {
           navigate('/login', { replace: true });
         }
       }
@@ -156,7 +156,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       } else {
         clearAuthSession();
         setCurrentUser(null);
-        if (isProtectedPath(window.location.pathname)) {
+        if (isProtectedPath(window.location.pathname) || window.location.pathname === '/') {
           navigate('/login', { replace: true });
         }
       }
